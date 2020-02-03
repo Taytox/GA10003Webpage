@@ -1,0 +1,125 @@
+
+/*formating applied to the whole page */
+*{ 
+    margin: 0; /*Added due to different browsers adding different margins, on chrome this would lead to a scroll bar*/
+    box-sizing: border-box;
+    font-family: "Baxter Sans Regular",Helvetica,Arial,sans-serif;
+}
+/*Style applied to the box container*/
+
+
+.grid-container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(12,auto);
+    grid-template-rows: 55px auto 50px;
+    grid-template-areas:
+    "hl hl hl hl hl hl hl hl hl hl hc hs"
+    "m m m c c c c c c c c c"
+    "f f f f f f f f f f f f";
+    background-color: #fffaf4 ;
+}
+ @media only screen and (max-width: 1200px) {
+	.grid-container{
+	display: grid;
+    height: 100vh; 
+    grid-template-columns: repeat(8,auto);
+    grid-template-rows: 55px 55px auto 50px;
+    grid-template-areas:
+    "hl hl hl hl hl hl hl hs" 
+	"hc hc hc hc hc hc hc hc"
+    "m m c c c c c c "
+    "f f f f f f f f ";
+    background-color: #fffaf4 ;
+	
+	}
+	
+} 
+
+@media only screen and (max-width:768){
+	.grid-container{
+	display: grid;
+    height: 100vh; 
+    grid-template-columns: repeat(8,auto);
+    grid-template-rows: 55px 55px auto 50px;
+    grid-template-areas:
+    "hl hl hl hl hl hl hl hs" 
+	"hc hc hc hc hc hc hc hc"
+    "c c c c c c c "
+    "f f f f f f f f ";
+    background-color: #fffaf4 ;
+	
+	}
+
+}
+
+.headingLogo{
+    grid-area: hl;
+    padding-top: 5px;
+    padding-left:5px;
+    background-color: #4365e2;
+}
+
+.headingSearch { 
+	gird-area: hs;
+	width: 100%;
+	box-sizing: border-box;
+	background-color: #4365e2;
+	padding: 19px 20px 12px 20px;
+}
+
+.headingSearch input[type=text]{
+
+font-size: 16px;
+background-image: url('img/searchicon.png');
+background-position: 10px 10px; 
+border: 0px none;
+border-bottom:2px solid #eee;
+
+}
+
+
+.headingCategories {
+    
+    grid-area: hc;
+    list-style-type: none;
+    background-color: #4365e2;
+}
+.headingCategories ui{
+
+
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Style applied to the list items in headings Categories */ 
+.headingCategories li{
+    float: left; 
+}
+
+/* Style applied to the links in headings Categories */ 
+.headingCategories a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 20px 16px;
+    text-decoration: none;
+}
+
+/* Style applied to the footer class */ 
+.footer{
+    grid-area: f;
+    background-color: #ecf0f1;
+}
+
+/*Style applied to the menu class */ 
+.menu{
+    grid-area: m;
+}
+
+/*Style applied to the main class */ 
+.content{
+    grid-area: c;
+}
+
